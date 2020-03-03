@@ -10,16 +10,13 @@ var sequelize = require("../config/connection.js");
 var Watchlist = sequelize.define("character", {
   //sequelize will create the id, movie_id, and user_id
    // the routeName gets saved as a string
-   
+   movie_id: Sequelize.INTEGER,
+   user_id: Sequelize.INTEGER,
    isWatched: {
     type: BOOLEAN,
     allowNull: false,
     defaultValue: false
-}, {
-  // disable the modification of tablenames; By default, sequelize will automatically
-  // transform all passed model names (first parameter of define) into plural.
-  // if you don't want that, set the following
-  freezeTableName: true
+} 
 });
 
 // Syncs with DB
