@@ -9,14 +9,14 @@ var sequelize = require("../config/connection.js");
 // Creates a "Watchlist" model that matches up with DB
 var Watchlist = sequelize.define("character", {
   //sequelize will create the id, movie_id, and user_id
-   // the routeName gets saved as a string
-   movie_id: Sequelize.INTEGER,
-   user_id: Sequelize.INTEGER,
-   isWatched: {
+  // the routeName gets saved as a string
+  movieId: Sequelize.INTEGER,
+  userId: Sequelize.INTEGER,
+  isWatched: {
     type: BOOLEAN,
     allowNull: false,
     defaultValue: false
-} 
+  }
 });
 
 // Syncs with DB
