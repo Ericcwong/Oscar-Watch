@@ -18,8 +18,12 @@
   },
   "homepage": "https://github.com/Ericcwong/Oscar-Watch#readme",
   "dependencies": {
-    "express": "^4.17.1",
-    "mysql2": "^2.1.0",
-    "sequelize": "^5.21.5"
+    "bcryptjs": "2.4.3",
+    "express": "^4.17.0",
+    "express-session": "^1.16.1",
+    "mysql2": "^1.6.5",
+    "passport": "^0.4.0",
+    "passport-local": "^1.0.0",
+    "sequelize": "^5.8.6"
   }
 }
