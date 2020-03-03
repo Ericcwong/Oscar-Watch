@@ -1,3 +1,5 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable no-undef */
 $(document).ready(function() {
   // Getting references to our form and input
   var signUpForm = $("form.signup");
