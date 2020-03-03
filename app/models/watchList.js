@@ -9,7 +9,12 @@ var sequelize = require("../config/connection.js");
 // Creates a "Watchlist" model that matches up with DB
 var Watchlist = sequelize.define("character", {
   //sequelize will create the id, movie_id, and user_id
-  
+   // the routeName gets saved as a string
+   
+   isWatched: {
+    type: BOOLEAN,
+    allowNull: false,
+    defaultValue: false
 }, {
   // disable the modification of tablenames; By default, sequelize will automatically
   // transform all passed model names (first parameter of define) into plural.
