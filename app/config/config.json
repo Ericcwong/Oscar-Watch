@@ -1,7 +1,7 @@
 {
   "development": {
-    "username": "process.env.mySQL_username",     
-    "password": "process.env.mySQL_password",
+    "username": "root",
+    "password": "Theodog28!",
     "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql",

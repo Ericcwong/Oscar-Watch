@@ -31,5 +31,13 @@ module.exports = function(sequelize, DataTypes) {
       null
     );
   });
+
+  User.associate = models => {
+    console.log(models.Watchlist);
+    User.belongsToMany(models.Movie, {
+      through: models.Watchlist
+    });
+  };
+
   return User;
 };
