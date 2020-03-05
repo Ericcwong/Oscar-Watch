@@ -22,6 +22,7 @@
   "homepage": "https://github.com/Ericcwong/Oscar-Watch#readme",
   "dependencies": {
     "bcryptjs": "2.4.3",
+    "d3-fetch": "^1.1.2",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
     "mysql2": "^1.6.5",
