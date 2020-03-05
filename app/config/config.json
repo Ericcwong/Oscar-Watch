@@ -16,6 +16,7 @@
     "operatorsAliases": false
   },
   "production": {
+   "use_env_variable": "JAWSDB_URL",
     "username": "process.env.mySQL_username",
     "password": "process.env.mySQL_password",
     "database": "database_production",
