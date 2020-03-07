@@ -6,7 +6,7 @@ module.exports = function(sequelize, DataType) {
     catagories: DataType.STRING,
     name: DataType.STRING,
     movieName: DataType.STRING,
-    isWinner: DataType.INTEGER
+    isWinner: DataType.BOOLEAN
   });
 
   Movie.associate = models => {
