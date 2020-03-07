@@ -1,11 +1,11 @@
 {
   "development": {
-   "username": "process.env.mySQL_username",
-    "password": "process.env.mySQL_password",
-    "database": "database_development",
+   "username": "root",
+    "password": "root",
+    "database": "Oscar_watch_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": 1
   },
   "test": {
     "username": "process.env.mySQL_username",

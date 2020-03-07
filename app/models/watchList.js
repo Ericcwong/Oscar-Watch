@@ -4,3 +4,4 @@ module.exports = function(sequelize, DataType) {
   });
   return Watchlist;
 };
+ 
