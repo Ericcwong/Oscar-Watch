@@ -13,11 +13,7 @@ var db = require("./app/models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-<<<<<<< HEAD
-app.use(express.static(__dirname + "/public"));
-=======
 app.use(express.static("app/public"));
->>>>>>> ff7ce48c44e6628d65c9df67a5dec17383ca8ec8
 // We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "Laughing vanilla", resave: true, saveUninitialized: true })
@@ -26,15 +22,10 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-<<<<<<< HEAD
-require("./app/routes/html-routes")(app);
-require("./app/routes/api-movies")(app);
-=======
 require("./app/routes/html-routes.js")(app);
 require("./app/routes/api-movies.js")(app);
 require("./app/routes/api-users.js")(app);
 require("./app/routes/api-watchlist.js")(app);
->>>>>>> ff7ce48c44e6628d65c9df67a5dec17383ca8ec8
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({}).then(function() {
