@@ -1,11 +1,20 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "root",
     "password": "password",
     "database": "oscar_watch_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
     "operatorsAliases": true
+=======
+   "username": "process.env.mySQL_username",
+    "password": "process.env.mySQL_password",
+    "database": "Oscar_watch_db",
+    "host": "127.0.0.1",
+    "dialect": "mysql",
+    "operatorsAliases": 1
+>>>>>>> a3f9b4bd77107b25fe284c548a5e77621982f33c
   },
   "test": {
     "username": "root",
