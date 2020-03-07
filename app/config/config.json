@@ -1,19 +1,14 @@
 {
   "development": {
-<<<<<<< HEAD
     "username": "root",
     "password": "process.env.MYSQL_PASSWORD",
-=======
-   "username": "process.env.mySQL_username",
-    "password": "process.env.mySQL_password",
->>>>>>> d7c05d3b96a2395d75bc5638e43fa6b3c5a02f1d
-    "database": "database_development",
+    "database": "oscar_watch_db",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "operatorsAliases": false
+    "operatorsAliases": true
   },
   "test": {
-    "username": "process.env.mySQL_username",
+    "username": "root",
     "password": "process.env.mySQL_password",
     "database": "database_test",
     "host": "127.0.0.1",
@@ -22,7 +17,7 @@
   },
   "production": {
    "use_env_variable": "JAWSDB_URL",
-    "username": "process.env.mySQL_username",
+    "username": "root",
     "password": "process.env.mySQL_password",
     "database": "database_production",
     "host": "127.0.0.1",
