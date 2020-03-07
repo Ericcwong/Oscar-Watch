@@ -4,8 +4,11 @@
   "description": "",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "node server.js"
+    "test": "npm run lint",
+    "start": "node server.js",
+    "lint": "eslint --quiet .",
+    "fix": "eslint --fix .",
+    "watch": "nodemon server.js"
   },
   "repository": {
     "type": "git",
@@ -19,11 +22,15 @@
   "homepage": "https://github.com/Ericcwong/Oscar-Watch#readme",
   "dependencies": {
     "bcryptjs": "2.4.3",
+    "d3-fetch": "^1.1.2",
     "express": "^4.17.0",
     "express-session": "^1.16.1",
     "mysql2": "^1.6.5",
-    "passport": "^0.4.0",
+    "passport": "^0.4.1",
     "passport-local": "^1.0.0",
     "sequelize": "^5.8.6"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0"
   }
 }
