@@ -1,7 +1,12 @@
 {
   "development": {
+<<<<<<< HEAD
     "username": "root",
     "password": "process.env.MYSQL_PASSWORD",
+=======
+   "username": "process.env.mySQL_username",
+    "password": "process.env.mySQL_password",
+>>>>>>> d7c05d3b96a2395d75bc5638e43fa6b3c5a02f1d
     "database": "database_development",
     "host": "127.0.0.1",
     "dialect": "mysql",
