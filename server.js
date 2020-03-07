@@ -12,7 +12,7 @@ var db = require("./app/models");
 var app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use(express.json());
-app.use(express.static("public"));
+app.use(express.static(__dirname + "/public"));
 // We need to use sessions to keep track of our user's login status
 app.use(
   session({ secret: "Laughing vanilla", resave: true, saveUninitialized: true })
@@ -21,7 +21,7 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-require("./app/routes/html-routes.js")(app);
+require("./app/routes/html-routes")(app);
 require("./app/routes/api-movies")(app);
 
 // Syncing our database and logging a message to the user upon success
