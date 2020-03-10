@@ -1,3 +1,4 @@
+
 // Requiring necessary npm packages
 var express = require("express");
 var session = require("express-session");
@@ -25,7 +26,7 @@ app.use(passport.session());
 require("./app/routes/html-routes.js")(app);
 require("./app/routes/api-movies.js")(app);
 require("./app/routes/api-users.js")(app);
-require("./app/routes/api-watchlist.js")(app);
+// require("./app/routes/api-watchlist.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({}).then(function() {
@@ -37,3 +38,4 @@ db.sequelize.sync({}).then(function() {
     );
   });
 });
+
