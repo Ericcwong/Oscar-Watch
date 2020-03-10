@@ -6,7 +6,11 @@
   "scripts": {
     "test": "npm run lint",
     "start": "node server.js",
+<<<<<<< HEAD
     "lint": "eslint --quiet .",
+=======
+    "lint": "eslint --fix .",
+>>>>>>> master
     "fix": "eslint --fix .",
     "watch": "nodemon server.js"
   },
