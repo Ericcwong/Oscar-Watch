@@ -1,13 +1,11 @@
-// d3.csv("../../database/Copy of the_oscar_award.csv").then(function(data){
-//   console.log(data);
-// });
+
 $(document).ready(function (){
-  let category = $("#oscar_category :selected").text();
-  let nomineeName = $("#nominee_name");
-  let nominatedFilm = $("#film_nominated");
-  let filmYear = $("#film_production_year");
-  let winner = $("#is_winner");
-  let searchResults = $("#search_results");
+  // let category = $("#oscar_category :selected").text();
+  // let nomineeName = $("#nominee_name");
+  // let nominatedFilm = $("#film_nominated");
+  // let filmYear = $("#film_production_year");
+  // let winner = $("#is_winner");
+  // let searchResults = $("#search_results");
   let searchForm = $("#search-movies");
 
   function categorySearch(){
@@ -19,20 +17,20 @@ $(document).ready(function (){
     });
 
   }
-  console.log("line 26");
+  // console.log("line 26");
 
-  function movieSearch(){
+  // function movieSearch(){
 
-  }
-  function nameSearch(){
+  // }
+  // function nameSearch(){
 
-  }
-  function yearSearch(){
+  // }
+  // function yearSearch(){
 
-  }
-  function displaySearch(){
+  // }
+  // function displaySearch(){
 
-  }
+  // }
   function searchOscars(event){
     event.preventDefault();
     categorySearch(category);
