@@ -20,7 +20,7 @@ module.exports = function(app) {
 
   // Get route for returning awards of a specific category
   app.get("/api/movies/category/:category", function(req, res) {
-    db.Movies.findAll({
+    db.Movie.findAll({
       where: {
         catagories: req.params.category
       }
