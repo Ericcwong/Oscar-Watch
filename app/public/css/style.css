@@ -9,11 +9,15 @@ form.login {
   }
   /* label focus color */
   .input-field input[type=text]:focus + label {
-    color: #ffc107 ;
+    color: #ffc107 !important;
   }
 
-  .input-field input[type=text]{
-    color: #dda704 ;
+  .amber-checkbox[type="checkbox"].filled-in:checked + span:not(.lever):after{
+    border: 2px solid #ffc107 !important;
+    background-color: #ffc107 !important;
+}
+  .input-field input[type=text], .dropdown-content li>span {
+    color: #ffc107 !important;
   }
   /* label underline focus color */
   .input-field input[type=text]:focus {
@@ -32,5 +36,5 @@ form.login {
   }
   /* icon prefix focus color */
   .input-field .prefix.active {
-    color: #ffc107 ;
+    color: #ffc107 !important;
   }
