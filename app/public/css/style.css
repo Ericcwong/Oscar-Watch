@@ -12,11 +12,15 @@ form.login {
     color: #ffc107 !important;
   }
 
+  .indicator-item.active {
+  background-color: #ffc107 !important;
+}
+
   .amber-checkbox[type="checkbox"].filled-in:checked + span:not(.lever):after{
     border: 2px solid #ffc107 !important;
     background-color: #ffc107 !important;
 }
-  .input-field input[type=text], .dropdown-content li>span {
+  .input-field input[type=text], .dropdown-content li>span{
     color: #ffc107 !important;
   }
   /* label underline focus color */
