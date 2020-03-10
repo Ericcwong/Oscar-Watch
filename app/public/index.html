@@ -13,17 +13,25 @@
 </head>
 
 <body class="grey darken-4">
-  <nav class="black amber-text">
-    <div class="nav-wrapper">
-      <a href="/" class="brand-logo amber-text">Oscar Watch</a>
-      <ul id="nav-mobile" class="right hide-on-med-and-down amber-text">
-        <li><a href="/members">Members</a></li>
-        <li><a href="/login">Sign In</a></li>
-        <li><a href="/signup">Sign Up</a></li>
-      </ul>
-    </div>
-  </nav>
-
+  <header>
+    <nav class="black amber-text">
+      <div class="nav-wrapper">
+        <a href="#" class="brand-logo amber-text">Oscar Watch</a>
+        <a href="#" data-target="mobile-demo" class="sidenav-trigger amber-text"><i class="material-icons">menu</i></a>
+        <ul id="nav-full" class="right hide-on-med-and-down amber-text">
+          <li><a class="amber-text" href="/members">Members</a></li>
+          <li><a class="amber-text" href="/login">Sign In</a></li>
+          <li><a class="amber-text" href="/signup">Sign Up</a></li>
+        </ul>
+      </div>
+    </nav>
+    <ul id="mobile-demo" class="sidenav black">
+      <li><a class="amber-text" href="/members">Members</a></li>
+      <li><a class="amber-text" href="/login">Sign In</a></li>
+      <li><a class="amber-text" href="/signup">Sign Up</a></li>
+    </ul>
+    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger amber-text"><i class="material-icons">menu</i></a> -->
+  </header>
   <div class="slider">
     <ul class="slides">
       <li>
@@ -187,6 +195,8 @@
     $(document).ready(function () {
       $(".slider").slider();
       $("select").formSelect();
+      $(".button-collapse").sideNav();
+      $('.sidenav').sidenav();
     });
   </script>
 </body>
