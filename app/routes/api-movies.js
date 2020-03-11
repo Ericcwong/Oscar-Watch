@@ -12,11 +12,11 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
   // GET route for getting all of the movies
-  app.get("/api/movies/", function(req, res) {
-    db.Movie.findAll({}).then(function(result) {
-      res.json(result);
-    });
-  });
+  // app.get("/api/movies/", function(req, res) {
+  //   db.Movie.findAll({}).then(function(result) {
+  //     res.json(result);
+  //   });
+  // });
 
   // Get route for returning awards of a specific category
   app.get("/api/movies/category/:category", function(req, res) {

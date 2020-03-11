@@ -3,9 +3,9 @@
 // });
 $(document).ready(function (){
   let category = $("#oscar_category :selected").text();
-  let nomineeName = $("#nominee_name");
+  let nomineeName = $("#nominee_name").val;
   let movie = $("#film_nominated").val();
-  let filmYear = $("#film_production_year");
+  let filmYear = $("#film_production_year").text();
   let winner = $("#is_winner");
   let searchResults = $("#search_results");
   let searchForm = $("#search-movies");
@@ -14,30 +14,35 @@ $(document).ready(function (){
     let selectedCategory = $("#oscar_category :selected").text();
     $.get(`/api/movies/category/${selectedCategory}`, function(data){
       console.log(data);
+      console.log("You searched for a Catagory");
 
     });
 
   }
 
-
+  //Search function for the name of the movie
   function movieSearch(){
     let enteredMovie = $("#film_nominated").val().trim();
     $.get(`/api/movies/${enteredMovie}`,function(data){
       console.log(data);
+      console.log("You searched for a Film");
     });
+
 
   }
-  function nameSearch(){
+  function nameSearch(nomineeName){
     let enteredName = $("#nominee_name").val().trim();
-    $.get(`/api/movies/${enteredName}`,function(data){
+    $.get(`/api/movies/name/${enteredName}`,function(data){
       console.log(data);
+      console.log("You searched for a Name");
     });
-
   }
   function yearSearch(){
+
     let enteredYear = $("#film_production_year").val().trim();
-    $.get(`/api/movies/${enteredYear}`,function(data){
+    $.get(`/api/movies/year/${enteredYear}`,function(data){
       console.log(data);
+      console.log("You searched for a Year");
     });
 
 
@@ -47,13 +52,19 @@ $(document).ready(function (){
   // }
   function searchOscars(event){
     event.preventDefault();
-    // categorySearch(category);
-    yearSearch(movie);
+
+
+    nameSearch();
+
+
+    yearSearch();
+
+    movieSearch();
+
+    categorySearch();
 
   }
 
 
-
   searchForm.on("submit",searchOscars);
 });
-
