@@ -12,11 +12,11 @@ var db = require("../models");
 // =============================================================
 module.exports = function(app) {
   // GET route for getting all of the movies
-  app.get("/api/movies/", function(req, res) {
-    db.Movies.findAll({}).then(function(result) {
-      res.json(result);
-    });
-  });
+  // app.get("/api/movies/", function(req, res) {
+  //   db.Movie.findAll({}).then(function(result) {
+  //     res.json(result);
+  //   });
+  // });
 
   // Get route for returning awards of a specific category
   app.get("/api/movies/category/:category", function(req, res) {
@@ -31,7 +31,7 @@ module.exports = function(app) {
 
   // Get route for returning a specific Movie
   app.get("/api/movies/:movie", function(req, res) {
-    db.Movies.findAll({
+    db.Movie.findAll({
       where: {
         movieName: req.params.movie
       }
@@ -42,7 +42,7 @@ module.exports = function(app) {
 
   // Get route for returning winners of a specific name
   app.get("/api/movies/name/:name", function(req, res) {
-    db.Movies.findAll({
+    db.Movie.findAll({
       where: {
         name: req.params.name
       }
@@ -53,7 +53,7 @@ module.exports = function(app) {
 
   // Get route for returning winners of a specific year
   app.get("/api/movies/year/:year", function(req, res) {
-    db.Movies.findAll({
+    db.Movie.findAll({
       where: {
         awardYear: req.params.year
       }

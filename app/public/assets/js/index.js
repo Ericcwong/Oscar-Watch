@@ -1,10 +1,11 @@
 $(document).ready(function (){
-  // let category = $("#oscar_category :selected").text();
-  // let nomineeName = $("#nominee_name").val();
-  // let movie = $("#film_nominated").val();
-  // let filmYear = $("#film_production_year").text();
-  // let winner = $("#is_winner");
-  // let searchResults = $("#search_results");
+
+  let category = $("#oscar_category :selected").text();
+  let nomineeName = $("#nominee_name").val;
+  let movie = $("#film_nominated").val();
+  let filmYear = $("#film_production_year").text();
+  let winner = $("#is_winner");
+  let searchResults = $("#search_results");
   let searchForm = $("#search-movies");
 
   function categorySearch(){
@@ -25,9 +26,15 @@ $(document).ready(function (){
       console.log("You searched for a Film");
     });
 
-
   }
   function nameSearch(){
+    let enteredName = $("#nominee_name").val().trim();
+    $.get(`/api/movies/name/${enteredName}`,function(data){
+      console.log(data);
+      console.log("You searched for a Name");
+    });
+  }
+  function nameSearch(nomineeName){
     let enteredName = $("#nominee_name").val().trim();
     $.get(`/api/movies/name/${enteredName}`,function(data){
       console.log(data);
