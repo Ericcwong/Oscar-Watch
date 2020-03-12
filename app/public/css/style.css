@@ -8,7 +8,7 @@ form.login {
     color: #ffc107 ;
   }
   /* label focus color */
-  .input-field input[type=text]:focus + label {
+  .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
     color: #ffc107 !important;
   }
 
@@ -20,11 +20,11 @@ form.login {
     border: 2px solid #ffc107 !important;
     background-color: #ffc107 !important;
 }
-  .input-field input[type=text], .dropdown-content li>span{
+  .input-field input[type=text], .dropdown-content li>span, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
     color: #ffc107 !important;
   }
   /* label underline focus color */
-  .input-field input[type=text]:focus {
+  .input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus  {
     border-bottom: 1px solid #ffc107 !important;
     box-shadow: 0 1px 0 0 #ffc107 !important;
   }
