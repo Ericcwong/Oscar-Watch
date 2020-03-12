@@ -4,8 +4,8 @@ $(document).ready(function() {
   let movie = $("#film_nominated").val();
   let filmYear = $("#film_production_year").text();
   let winner = $("#is_winner").is(":checked");
-  let searchResults = $("#search_results");
-  let searchForm = $("#search-movies");
+  // let searchResults = $("#search_results");
+  // let searchForm = $("#search-movies");
 
   console.log(category + nomineeName + movie + filmYear + winner);
 
@@ -13,10 +13,10 @@ $(document).ready(function() {
   //   let selectedCategory = $("#oscar_category :selected").text();
   //   $.get(`/api/movies/category/${selectedCategory}`);
   //   console.log(selectedCategory);
-    // console.log({data});
-    // console.log("You searched for a Catagory");
+  // console.log({data});
+  // console.log("You searched for a Catagory");
 
-    // });
+  // });
   //}
 
   //Search function for the name of the movie
@@ -85,8 +85,8 @@ $(document).ready(function() {
         }).then(function(res) {
           console.log(res.Poster);
           image = res.Poster;
-            //Create the cards
-            let card = `
+          //Create the cards
+          let card = `
             <div class="card grey darken-4">
             <div class="card-image">
             <img src = "${image}" alt = "${enteredMovie} Movie Poster">
@@ -103,7 +103,7 @@ $(document).ready(function() {
           </div>`;
             //appends the cards to the row search_results
 
-            $("#search_results").append(card);
+          $("#search_results").append(card);
         });
       }
     });
