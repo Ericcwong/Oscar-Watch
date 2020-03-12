@@ -42,3 +42,6 @@ form.login {
   .input-field .prefix.active {
     color: #ffc107 !important;
   }
+  #search_results{
+    background-color: white;
+  }
