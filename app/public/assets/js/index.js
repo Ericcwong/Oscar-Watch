@@ -86,23 +86,38 @@ $(document).ready(function() {
           console.log(res.Poster);
           image = res.Poster;
           //Create the cards
+          // let card = `
+          //   <div class="card amber darken-4">
+          //   <div class="card-image">
+          //   <img src = "${image}" alt = "${enteredMovie} Movie Poster">
+          //   </div>
+          //   <div class="card-title">
+          //   <h2><span class="text-darken-2">${enteredMovie}</span></h2>
+          //   </div>
+          //   <div class="card-content">
+          //   <p>FilmYear: ${filmYear}</p>
+          //   </div>
+          //     <p class="card-text"><strong>Categories: </strong>${catagories}</p>
+          //     <p class="card-text"><strong>Name: </strong>${name}</p>
+          // </div>
+          // </div>`;
           let card = `
-            <div class="card grey darken-4">
-            <div class="card-image">
-            <img src = "${image}" alt = "${enteredMovie} Movie Poster">
+          <div class="col s12 m6">
+            <div class="card">
+              <div class="card-image">
+                <img src="${image}">
+                <span class="card-title">${enteredMovie}</span>
+                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+              </div>
+              <div class="card-content">
+                <p>Nominated category: ${catagories}</p>
+                <p>Nominee name: ${name}</p>
+                <p>Film year:${filmYear}</p>
+                <p></p>
+              </div>
             </div>
-            <div class="card-title">
-            <span class="text-darken-2">${enteredMovie}</span>
-            </div>
-            <div class="card-content amber-text">
-            <h3>${filmYear}</h3></div>
-              <p class="card-text"><strong>Categories: </strong>${catagories}</p>
-              <p class="card-text"><strong>Name: </strong>${name}</p>
-            </div>
-          </div>
           </div>`;
             //appends the cards to the row search_results
-
           $("#search_results").append(card);
         });
       }
