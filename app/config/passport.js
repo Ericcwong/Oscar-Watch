@@ -2,7 +2,7 @@
 var bCrypt = require("bcrypt-nodejs");
 var db = require("../models");
 
-module.exports = function(passport, user) {
+module.exports = function(passport) {
   var LocalStrategy = require("passport-local").Strategy;
 
   //serialize
@@ -55,7 +55,7 @@ module.exports = function(passport, user) {
               password: userPassword
             };
 
-            db.User.create(data).then(function(newUser, created) {
+            db.User.create(data).then(function(newUser) {
               if (!newUser) {
                 return done(null, false);
               }
