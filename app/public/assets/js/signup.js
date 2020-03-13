@@ -23,15 +23,10 @@ $(document).ready(function() {
     }
     // If we have an email and password, run the signUpUser function
     function signUpUser(email, password) {
-      $.post("/api/signup", {
+      $.post("/signup", {
         email: email,
         password: password
-      })
-        .then(function(data) {
-          window.location.replace("/members");
-          // If there's an error, handle it by throwing up a bootstrap alert
-        })
-        .catch(handleLoginErr);
+      }).catch(handleLoginErr);
     }
     signUpUser(userData.email, userData.password);
     emailInput.val("");
