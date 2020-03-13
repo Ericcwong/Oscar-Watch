@@ -86,21 +86,6 @@ $(document).ready(function() {
           console.log(res.Poster);
           image = res.Poster;
           //Create the cards
-          // let card = `
-          //   <div class="card amber darken-4">
-          //   <div class="card-image">
-          //   <img src = "${image}" alt = "${enteredMovie} Movie Poster">
-          //   </div>
-          //   <div class="card-title">
-          //   <h2><span class="text-darken-2">${enteredMovie}</span></h2>
-          //   </div>
-          //   <div class="card-content">
-          //   <p>FilmYear: ${filmYear}</p>
-          //   </div>
-          //     <p class="card-text"><strong>Categories: </strong>${catagories}</p>
-          //     <p class="card-text"><strong>Name: </strong>${name}</p>
-          // </div>
-          // </div>`;
           let card = `
           <div class="col s12 m6">
             <div class="card">
