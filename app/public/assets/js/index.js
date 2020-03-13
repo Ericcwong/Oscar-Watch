@@ -1,9 +1,10 @@
 $(document).ready(function () {
   let category = $("#oscar_category :selected").text();
-  let nomineeName = $("#nominee_name").val();
-  let movie = $("#film_nominated").val();
-  let filmYear = $("#film_production_year").text();
+  let nomineeName = $("#nominee_name").val().trim();
+  let movie = $("#film_nominated").val().trim();
+  let filmYear = $("#film_production_year").val().trim();
   let winner = $("#is_winner").is(":checked");
+  console.log(winner);
   // let searchResults = $("#search_results");
   // let searchForm = $("#search-movies");
 
@@ -26,45 +27,68 @@ $(document).ready(function () {
     let nomineeName = $("#nominee_name")
       .val()
       .trim();
-    let movie = $("#film_nominated")
+    let movieName = $("#film_nominated")
       .val()
       .trim();
     let filmYear = $("#film_production_year")
       .val()
       .trim();
-    let winner = $("#is_winner").is(":checked");
+    let isWinner = $("input[type=checkbox]").prop("checked");
+    // let isWinner = $("#is_winner").is(":checked");
+    // if($("#is_winner").is(":checked")){
+    //   isWinner = true;
+    //   return isWinner;
+    // }
+    // if($("#is_winner").is(":not(:checked)")){
+    //   isWinner = false;
+    //   return isWinner;
+    // }
+    console.log(isWinner);
     let query = "";
 
+    //What user has selected as a search criteria
+    //Searching by categories
     if (category !== "" && category !== "Select Category") {
       if (query !== "") {
         query = query + "&";
       }
       query = query + "catagories=" + category;
     }
+    //Searching by nominee name
     if (nomineeName !== "") {
       if (query !== "") {
         query = query + "&";
       }
       query = query + "name=" + nomineeName;
     }
-    if (movie !== "") {
+    //Searching by Movie name
+    if (movieName !== "") {
       if (query !== "") {
         query = query + "&";
       }
-      query = query + "movieName=" + movie;
+      query = query + "movieName=" + movieName;
     }
+    //Searching by year film was produced
     if (filmYear !== "") {
       if (query !== "") {
         query = query + "&";
       }
       query = query + "filmYear=" + filmYear;
     }
-    if (winner !== false) {
-      if (query !== "") {
+    //Checking if the movie was a Oscar winner
+    if (isWinner !== false) {
+      if (isWinner !== true) {
         query = query + "&";
       }
-      query = query + "Winner=" + winner;
+      query = query + "isWinner=" + isWinner;
     }
+    // if(isWinner !== false){
+    //   query = query + "&";
+    //   query = query + "isWinner=" + isWinner;
+    // }else if (isWinner !== true){
+    //   query = query + "&";
+    //   query = query + "isWinner=" + isWinner;
+    // }
 
     console.log(query);
     $.get(`/api/movies/search?${query}`, function (films) {
@@ -77,6 +101,7 @@ $(document).ready(function () {
         let filmYear = films[m].filmYear;
         let catagories = films[m].catagories;
         let name = films[m].name;
+        let isWinner =films[m].isWinner;
         console.log(enteredMovie);
         let image;
         $.ajax({
@@ -98,7 +123,7 @@ $(document).ready(function () {
                 <p>Nominated category: ${catagories}</p>
                 <p>Nominee name: ${name}</p>
                 <p>Film year:${filmYear}</p>
-                <p></p>
+                <p>Nominated winner: ${isWinner}</p>
               </div>
             </div>
           </div>`;

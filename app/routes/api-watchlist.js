@@ -17,7 +17,7 @@ module.exports = function(app) {
   });
   // POST route for saving a new Watchlist
   app
-    .post("/api/watchlist", function(req, res) {
+    .post("/api/watchlist", function(req) {
       console.log(req.body);
       //db.Watchlist Code
     })
