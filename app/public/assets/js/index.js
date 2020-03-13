@@ -107,7 +107,7 @@ $(document).ready(function () {
               <div class="card-image">
                 <img src="${image}">
                 <span class="card-title">${enteredMovie}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3 add-to-watchlist"><i class="material-icons">add</i></a>
               </div>
               <div class="card-content">
                 <p>Nominated category: ${catagories}</p>
