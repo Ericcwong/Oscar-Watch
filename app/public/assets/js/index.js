@@ -1,4 +1,4 @@
-$(document).ready(function() {
+$(document).ready(function () {
   let category = $("#oscar_category :selected").text();
   let nomineeName = $("#nominee_name").val();
   let movie = $("#film_nominated").val();
@@ -33,41 +33,41 @@ $(document).ready(function() {
       .val()
       .trim();
     let winner = $("#is_winner").is(":checked");
-    let query ="";
+    let query = "";
 
     if (category !== "" && category !== "Select Category") {
-      if (query !== ""){
+      if (query !== "") {
         query = query + "&";
       }
       query = query + "catagories=" + category;
     }
     if (nomineeName !== "") {
-      if (query !== ""){
+      if (query !== "") {
         query = query + "&";
       }
       query = query + "name=" + nomineeName;
     }
     if (movie !== "") {
-      if (query !== ""){
+      if (query !== "") {
         query = query + "&";
       }
       query = query + "movieName=" + movie;
     }
     if (filmYear !== "") {
-      if (query !== ""){
+      if (query !== "") {
         query = query + "&";
       }
       query = query + "filmYear=" + filmYear;
     }
     if (winner !== false) {
-      if (query !== ""){
+      if (query !== "") {
         query = query + "&";
       }
       query = query + "Winner=" + winner;
     }
 
     console.log(query);
-    $.get(`/api/movies/search?${query}`, function(films) {
+    $.get(`/api/movies/search?${query}`, function (films) {
       $("#search_results").empty();
       // console.log(enteredMovie);
       console.log(films);
@@ -82,17 +82,17 @@ $(document).ready(function() {
         $.ajax({
           url: `http://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
           method: "GET"
-        }).then(function(res) {
+        }).then(function (res) {
           console.log(res.Poster);
           image = res.Poster;
           //Create the cards
           let card = `
-          <div class="col s12 m6">
-            <div class="card">
+          <div class="col s12 m6 l3">
+            <div class="card grey">
               <div class="card-image">
                 <img src="${image}">
                 <span class="card-title">${enteredMovie}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light red"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3"><i class="material-icons">add</i></a>
               </div>
               <div class="card-content">
                 <p>Nominated category: ${catagories}</p>
@@ -102,7 +102,7 @@ $(document).ready(function() {
               </div>
             </div>
           </div>`;
-            //appends the cards to the row search_results
+          //appends the cards to the row search_results
           $("#search_results").append(card);
         });
       }
@@ -140,7 +140,7 @@ $(document).ready(function() {
 
   // }
 
-  $("#submitButton").on("click", function(event) {
+  $("#submitButton").on("click", function (event) {
     event.preventDefault();
     movieSearch();
     // categorySearch();
