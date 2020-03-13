@@ -65,8 +65,8 @@ module.exports = function(app) {
   app.get("/api/movies/search", function(req, res) {
     console.log("test 1");
     let parameters = {};
-    if (req.query.year){
-      parameters.awardYear = req.query.year;
+    if (req.query.filmYear){
+      parameters.filmYear = req.query.filmYear;
     }
     if (req.query.catagories){
       parameters.catagories = req.query.catagories;
