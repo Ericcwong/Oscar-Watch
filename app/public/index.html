@@ -1,206 +1,271 @@
 <!DOCTYPE html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Compiled and minified CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css"
+    />
+    <link rel="stylesheet" href="css/style.css" />
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+    <script
+      src="https://kit.fontawesome.com/5a03e2c1bd.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Oscar Watch</title>
+  </head>
 
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <!-- Compiled and minified CSS -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
-  <link rel="stylesheet" href="css/style.css" />
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
-  <script src="https://kit.fontawesome.com/5a03e2c1bd.js" crossorigin="anonymous"></script>
-  <title>Oscar Watch</title>
-</head>
-
-<body class="grey darken-4">
-  <header>
-    <nav class="black amber-text">
-      <div class="nav-wrapper">
-        <a href="#" class="brand-logo amber-text">Oscar Watch</a>
-        <a href="#" data-target="mobile-demo" class="sidenav-trigger amber-text"><i class="material-icons">menu</i></a>
-        <ul id="nav-full" class="right hide-on-med-and-down amber-text">
-          <li><a class="amber-text" href="/members">Members</a></li>
-          <li><a class="amber-text" href="/login">Sign In</a></li>
-          <li><a class="amber-text" href="/signup">Sign Up</a></li>
-        </ul>
-      </div>
-    </nav>
-    <ul id="mobile-demo" class="sidenav black">
-      <li><a class="amber-text" href="/members">Members</a></li>
-      <li><a class="amber-text" href="/login">Sign In</a></li>
-      <li><a class="amber-text" href="/signup">Sign Up</a></li>
-    </ul>
-    <!-- <a href="#" data-target="slide-out" class="sidenav-trigger amber-text"><i class="material-icons">menu</i></a> -->
-  </header>
-  <div class="slider">
-    <ul class="slides">
-      <li>
-        <img src="assets/img/Cimarron.jpg" alt="Poster for Cimarron, 1930 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>Cimarron</h3>
-          <h5 class="">1930 Outstanding Production Winner</h5>
+  <body class="grey darken-4">
+    <header>
+      <nav class="black amber-text">
+        <div class="nav-wrapper">
+          <a href="#" class="brand-logo amber-text">Oscar Watch</a>
+          <a
+            href="#"
+            data-target="mobile-demo"
+            class="sidenav-trigger amber-text"
+            ><i class="material-icons">menu</i></a
+          >
+          <ul id="nav-full" class="right hide-on-med-and-down amber-text">
+            <li><a class="amber-text" href="/members">Members</a></li>
+            <li><a class="amber-text" href="/login">Sign In</a></li>
+            <li><a class="amber-text" href="/signup">Sign Up</a></li>
+          </ul>
         </div>
-      </li>
-      <li>
-        <img src="assets/img/Rebecca.jpg" alt="Poster for Rebecca, 1940 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>Rebecca</h3>
-          <h5 class="">1940 Outstanding Production Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/All_About_Eve.jpg" alt="Poster for All About Eve, 1950 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>All About Eve</h3>
-          <h5 class="">1950 Best Motion Picture Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/The_Apartment.jpg" alt="Poster for The Apartment, 1960 winner" />
-
-        <div class="caption amber-text text-darken-1">
-          <h3>The Apartment</h3>
-          <h5 class="">1960 Best Motion Picture Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/patton.jpg" alt="Poster for Patton, 1970 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>Patton</h3>
-          <h5 class="">1970 Best Picture Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/OrdinaryPeople.jpg" alt="Poster for Ordinary People, 1980 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>Ordinary People</h3>
-          <h5 class="">1980 Best Picture Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/Dances_with_Wolves.jpg" alt="Poster for Dances With Wolves, 1990 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>Dances with Wolves</h3>
-          <h5 class="">1990 Best Picture Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/Gladiator.jpg" alt="Poster for Gladiator, 2000 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>Gladiator</h3>
-          <h5 class="">2000 Best Picture Winner</h5>
-        </div>
-      </li>
-      <li>
-        <img src="assets/img/Kings_speech.jpg" alt="Poster for Kings Speech, 2010 winner" />
-        <div class="caption amber-text text-darken-1">
-          <h3>King's Speech</h3>
-          <h5 class="">2010 Best Picture Winner</h5>
-        </div>
-      </li>
-    </ul>
-  </div>
-
-  <!-- year_film,year_ceremony,ceremony,category,name,film,winner -->
-  <div class="container section grey darken-3">
-    <div class="row">
-      <form class="col s11" id="search-movies">
-        <div class="row">
-          <div class="input-field col s6">
-            <select id="oscar_category">
-              <option value="0" selected>Select Category</option>
-              <option value="1">ACTOR IN A LEADING ROLE</option>
-              <option value="2">ACTOR IN A SUPPORTING ROLE</option>
-              <option value="3">ACTRESS IN A LEADING ROLE</option>
-              <option value="4">ACTRESS IN A SUPPORTING ROLE</option>
-              <option value="5">ADAPTION WRITING</option>
-              <option value="6">ANIMATED FEATURE FILM</option>
-              <option value="7">ANIMATED SHORT</option>
-              <option value="8">ASSISTANT DIRECTOR</option>
-              <option value="9">BEST PICTURE</option>
-              <option value="10">CINEMATOGRAPHY</option>
-              <option value="11">COSTUME DESIGN</option>
-              <option value="12">DANCE DIRECTION</option>
-              <option value="13">DIRECTING</option>
-              <option value="14">DOCUMENTARY (Feature)</option>
-              <option value="15">DOCUMENTARY (Short Subject)</option>
-              <option value="16">ENGINEERING EFFECTS</option>
-              <option value="17">FILM EDITING</option>
-              <option value="18">INTERNATIONAL FEATURE FILM</option>
-              <option value="19">MAKEUP AND HAIRSTYLING</option>
-              <option value="20">MUSIC SCORE</option>
-              <option value="21">MUSIC SONG</option>
-              <option value="22">ORIGINAL WRITING</option>
-              <option value="23">PRODUCTION DESIGN</option>
-              <option value="24">SHORT FILM</option>
-              <option value="25">SOUND EDITING</option>
-              <option value="26">SOUND MIXING</option>
-              <option value="27">SPECIAL AWARDS</option>
-              <option value="28">VISUAL EFFECTS</option>
-              <option value="29">WRITING (Title Writing)</option>
-            </select>
-            <label>Nomination Category</label>
+      </nav>
+      <ul id="mobile-demo" class="sidenav black">
+        <li><a class="amber-text" href="/members">Members</a></li>
+        <li><a class="amber-text" href="/login">Sign In</a></li>
+        <li><a class="amber-text" href="/signup">Sign Up</a></li>
+      </ul>
+      <!-- <a href="#" data-target="slide-out" class="sidenav-trigger amber-text"><i class="material-icons">menu</i></a> -->
+    </header>
+    <div class="slider">
+      <ul class="slides">
+        <li>
+          <img
+            src="assets/img/Cimarron.jpg"
+            alt="Poster for Cimarron, 1930 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>Cimarron</h3>
+            <h5 class="">1930 Outstanding Production Winner</h5>
           </div>
-          <div class="input-field col s6 amber-text">
-            <input id="nominee_name" type="text" class="" placeholder="Frank McCarthy, Producer" />
-            <label for="nominee_name">Nominee Name</label>
+        </li>
+        <li>
+          <img
+            src="assets/img/Rebecca.jpg"
+            alt="Poster for Rebecca, 1940 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>Rebecca</h3>
+            <h5 class="">1940 Outstanding Production Winner</h5>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6 amber-text">
-            <input placeholder="Patton" id="film_nominated" type="text" class="" />
-            <label for="film_nominated">Film Nominated</label>
+        </li>
+        <li>
+          <img
+            src="assets/img/All_About_Eve.jpg"
+            alt="Poster for All About Eve, 1950 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>All About Eve</h3>
+            <h5 class="">1950 Best Motion Picture Winner</h5>
           </div>
-          <!-- <div class="input-field col s6">
+        </li>
+        <li>
+          <img
+            src="assets/img/The_Apartment.jpg"
+            alt="Poster for The Apartment, 1960 winner"
+          />
+
+          <div class="caption amber-text text-darken-1">
+            <h3>The Apartment</h3>
+            <h5 class="">1960 Best Motion Picture Winner</h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="assets/img/patton.jpg"
+            alt="Poster for Patton, 1970 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>Patton</h3>
+            <h5 class="">1970 Best Picture Winner</h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="assets/img/OrdinaryPeople.jpg"
+            alt="Poster for Ordinary People, 1980 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>Ordinary People</h3>
+            <h5 class="">1980 Best Picture Winner</h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="assets/img/Dances_with_Wolves.jpg"
+            alt="Poster for Dances With Wolves, 1990 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>Dances with Wolves</h3>
+            <h5 class="">1990 Best Picture Winner</h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="assets/img/Gladiator.jpg"
+            alt="Poster for Gladiator, 2000 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>Gladiator</h3>
+            <h5 class="">2000 Best Picture Winner</h5>
+          </div>
+        </li>
+        <li>
+          <img
+            src="assets/img/Kings_speech.jpg"
+            alt="Poster for Kings Speech, 2010 winner"
+          />
+          <div class="caption amber-text text-darken-1">
+            <h3>King's Speech</h3>
+            <h5 class="">2010 Best Picture Winner</h5>
+          </div>
+        </li>
+      </ul>
+    </div>
+
+    <!-- year_film,year_ceremony,ceremony,category,name,film,winner -->
+    <div class="container section grey darken-3">
+      <div class="row">
+        <form class="col s11" id="search-movies">
+          <div class="row">
+            <div class="input-field col s6">
+              <select id="oscar_category">
+                <option value="0" selected>Select Category</option>
+                <option value="1">ACTOR IN A LEADING ROLE</option>
+                <option value="2">ACTOR IN A SUPPORTING ROLE</option>
+                <option value="3">ACTRESS IN A LEADING ROLE</option>
+                <option value="4">ACTRESS IN A SUPPORTING ROLE</option>
+                <option value="5">ADAPTION WRITING</option>
+                <option value="6">ANIMATED FEATURE FILM</option>
+                <option value="7">ANIMATED SHORT</option>
+                <option value="8">ASSISTANT DIRECTOR</option>
+                <option value="9">BEST PICTURE</option>
+                <option value="10">CINEMATOGRAPHY</option>
+                <option value="11">COSTUME DESIGN</option>
+                <option value="12">DANCE DIRECTION</option>
+                <option value="13">DIRECTING</option>
+                <option value="14">DOCUMENTARY (Feature)</option>
+                <option value="15">DOCUMENTARY (Short Subject)</option>
+                <option value="16">ENGINEERING EFFECTS</option>
+                <option value="17">FILM EDITING</option>
+                <option value="18">INTERNATIONAL FEATURE FILM</option>
+                <option value="19">MAKEUP AND HAIRSTYLING</option>
+                <option value="20">MUSIC SCORE</option>
+                <option value="21">MUSIC SONG</option>
+                <option value="22">ORIGINAL WRITING</option>
+                <option value="23">PRODUCTION DESIGN</option>
+                <option value="24">SHORT FILM</option>
+                <option value="25">SOUND EDITING</option>
+                <option value="26">SOUND MIXING</option>
+                <option value="27">SPECIAL AWARDS</option>
+                <option value="28">VISUAL EFFECTS</option>
+                <option value="29">WRITING (Title Writing)</option>
+              </select>
+              <label>Nomination Category</label>
+            </div>
+            <div class="input-field col s6 amber-text">
+              <input
+                id="nominee_name"
+                type="text"
+                class=""
+                placeholder="Frank McCarthy, Producer"
+              />
+              <label for="nominee_name">Nominee Name</label>
+            </div>
+          </div>
+          <div class="row">
+            <div class="input-field col s6 amber-text">
+              <input
+                placeholder="Patton"
+                id="film_nominated"
+                type="text"
+                class=""
+              />
+              <label for="film_nominated">Film Nominated</label>
+            </div>
+            <!-- <div class="input-field col s6">
             <input id="film_production_year" type="range" class="" min="1927" max="2019">
             <label for="film_production_year">Film Year</label>
           </div> -->
-          <div class="input-field col s6 amber-text">
-            <input placeholder="1970" id="film_production_year" type="text" class="" />
-            <label for="film_production_year">Film Year</label>
+            <div class="input-field col s6 amber-text">
+              <input
+                placeholder="1970"
+                id="film_production_year"
+                type="text"
+                class=""
+              />
+              <label for="film_production_year">Film Year</label>
+            </div>
           </div>
-        </div>
-        <div class="row">
-          <div class="input-field col s6 amber-text">
-            <p>
-              <label for="is_winner">
-                <input type="checkbox" class="filled-in amber-checkbox" checked="" id="is_winner" />
-                <span>Won the Oscar</span>
-              </label>
-            </p>
+          <div class="row">
+            <div class="input-field col s6 amber-text">
+              <p>
+                <label for="is_winner">
+                  <input
+                    type="checkbox"
+                    class="filled-in amber-checkbox"
+                    checked=""
+                    id="is_winner"
+                  />
+                  <span>Won the Oscar</span>
+                </label>
+              </p>
+            </div>
+            <div class="input-field col s6 amber-text">
+              <button
+                id="submitButton"
+                class="btn waves-effect waves-light amber darken-2"
+                type="submit"
+                name="action"
+              >
+                Search
+                <i class="material-icons right">search</i>
+              </button>
+            </div>
           </div>
-          <div class="input-field col s6 amber-text">
-            <button id="submitButton" class="btn waves-effect waves-light amber darken-2" type="submit" name="action">
-              Search
-              <i class="material-icons right">search</i>
-            </button>
-          </div>
-        </div>
-      </form>
+        </form>
+      </div>
     </div>
-  </div>
-  <div class="container section">
-    <div class="row movieRow grey darken-3" id="search_results">
-
+    <div class="container section">
+      <div class="row movieRow grey darken-3" id="search_results"></div>
     </div>
-  </div>
 
-  <script src="https://code.jquery.com/jquery-3.4.1.min.js"
-    integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
-  <!-- Compiled and minified JavaScript -->
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
-  <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
-  <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
-  <script src="assets/js/index.js"></script>
-  <script>
-    $(document).ready(function () {
-      $(".slider").slider();
-      $("select").formSelect();
-      $(".button-collapse").sideNav();
-      $('.sidenav').sidenav();
-    });
-  </script>
-</body>
-
+    <script
+      src="https://code.jquery.com/jquery-3.4.1.min.js"
+      integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+      crossorigin="anonymous"
+    ></script>
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+    <script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+    <script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+    <script src="assets/js/index.js"></script>
+    <script>
+      $(document).ready(function() {
+        $(".slider").slider();
+        $("select").formSelect();
+        $(".button-collapse").sideNav();
+        $(".sidenav").sidenav();
+      });
+    </script>
+  </body>
 </html>
