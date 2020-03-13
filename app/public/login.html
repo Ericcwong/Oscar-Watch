@@ -1,54 +1,74 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <title>Passport Authentication</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link
-      rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootswatch/3.3.7/lumen/bootstrap.min.css"
-    />
-    <link href="css/style.css" rel="stylesheet" />
-  </head>
 
-  <body>
-    <nav class="navbar navbar-default">
-      <div class="container-fluid">
-        <div class="navbar-header"></div>
-      </div>
-    </nav>
-    <div class="container">
-      <div class="row">
-        <div class="col-md-6 col-md-offset-3">
-          <h2>Login Form</h2>
-          <form class="login">
-            <div class="form-group">
-              <label for="exampleInputEmail1">Email address</label>
-              <input
-                type="email"
-                class="form-control"
-                id="email-input"
-                placeholder="Email"
-              />
-            </div>
-            <div class="form-group">
-              <label for="exampleInputPassword1">Password</label>
-              <input
-                type="password"
-                class="form-control"
-                id="password-input"
-                placeholder="Password"
-              />
-            </div>
-            <button type="submit" class="btn btn-default">Login</button>
-          </form>
-          <br />
-          <p>Or sign up <a href="signup.html">here</a></p>
-        </div>
-      </div>
-    </div>
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<!-- Compiled and minified CSS -->
+		<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css" />
+		<link rel="stylesheet" href="css/style.css" />
+		<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+		<script src="https://kit.fontawesome.com/5a03e2c1bd.js" crossorigin="anonymous"></script>
+		<title>Oscar Watch Login</title>
+	</head>
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script type="text/javascript" src="assets/js/login.js"></script>
-  </body>
+	<body class="grey darken-4 amber-text">
+		<header>
+			<nav class="black amber-text">
+				<div class="nav-wrapper">
+					<a href="/" class="brand-logo amber-text">Oscar Watch</a>
+					<a href="#" data-target="mobile-demo" class="sidenav-trigger amber-text"><i
+							class="material-icons">menu</i></a>
+					<ul id="nav-full" class="right hide-on-med-and-down amber-text">
+						<li><a class="amber-text" href="/members">Members</a></li>
+						<li><a class="amber-text" href="/signup">Sign Up</a></li>
+					</ul>
+				</div>
+			</nav>
+			<ul id="mobile-demo" class="sidenav black">
+				<li><a class="amber-text" href="/members">Members</a></li>
+				<li><a class="amber-text" href="/signup">Sign Up</a></li>
+			</ul>
+			<!-- <a href="#" data-target="slide-out" class="sidenav-trigger amber-text"><i class="material-icons">menu</i></a> -->
+		</header>
+		<div class="container">
+			<div class="row">
+				<div class="col m6 offset-m3">
+					<h2>Login Form</h2>
+					<form class="login">
+						<div class="input-field">
+							<label for="email-input">Email address</label>
+							<input type="email" class="amber-text text-darken-2" id="email-input" placeholder="Email" />
+						</div>
+						<div class="input-field">
+							<label for="password-input">Password</label>
+							<input type="password" class="amber-text text-darken-2" id="password-input" placeholder="Password" />
+						</div>
+						<button type="submit" class="btn waves-effect waves-light amber darken-2">Login</button>
+					</form>
+					<br />
+					<p>Or sign up <a href="signup.html" class="amber-text text-lighten-4">here</a></p>
+				</div>
+			</div>
+		</div>
+
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+		<script src="https://code.jquery.com/jquery-3.4.1.min.js"
+			integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+		<!-- Compiled and minified JavaScript -->
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/js/materialize.min.js"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.97.6/js/materialize.min.js"></script>
+		<script src="https://d3js.org/d3-dsv.v1.min.js"></script>
+		<script src="https://d3js.org/d3-fetch.v1.min.js"></script>
+		<script type="text/javascript" src="assets/js/login.js"></script>
+		<script>
+			$(document).ready(function () {
+				$(".slider").slider();
+				$("select").formSelect();
+				$(".button-collapse").sideNav();
+				$('.sidenav').sidenav();
+			});
+		</script>
+	</body>
+
 </html>

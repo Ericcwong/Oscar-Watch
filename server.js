@@ -36,6 +36,8 @@ require("./app/routes/api-movies.js")(app);
 
 //load passport strategies
 require("./app/config/passport.js")(passport, db.user);
+require("./app/routes/api-users.js")(app);
+// require("./app/routes/api-watchlist.js")(app);
 
 // Syncing our database and logging a message to the user upon success
 db.sequelize.sync({ force: true }).then(function() {
