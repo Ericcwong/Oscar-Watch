@@ -7,7 +7,7 @@ module.exports = function(sequelize, DataType) {
     name: DataType.STRING,
     movieName: DataType.STRING,
     isWinner: DataType.BOOLEAN
-  });
+  },{timestamps: false});
 
   Movie.associate = models => {
     Movie.belongsToMany(models.User, {
