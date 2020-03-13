@@ -28,19 +28,17 @@ app.use(passport.initialize());
 app.use(passport.session());
 
 // Requiring our routes
-var authRoute = require("./app/routes/auth.js")(app, passport);
+require("./app/routes/auth.js")(app, passport);
 //require("./app/routes/html-routes.js")(app);
 require("./app/routes/api-movies.js")(app);
 //require("./app/routes/api-users.js")(app);
-//require("./app/routes/api-watchlist.js")(app);
+require("./app/routes/api-watchlist.js")(app);
 
 //load passport strategies
 require("./app/config/passport.js")(passport, db.user);
-require("./app/routes/api-users.js")(app);
-// require("./app/routes/api-watchlist.js")(app);
 
 // Syncing our database and logging a message to the user upon success
-db.sequelize.sync({ force: true }).then(function() {
+db.sequelize.sync({}).then(function() {
   app.listen(PORT, function() {
     console.log(
       "==> 🌎  Listening on port %s. Visit http://localhost:%s/ in your browser.",
