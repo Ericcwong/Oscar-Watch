@@ -26,7 +26,6 @@ $(document).ready(function () {
     let isWinner = $("input[type=checkbox]").prop("checked");
     console.log(isWinner);
     let query = "";
-
     //What user has selected as a search criteria
     //Searching by categories
     if (category !== "" && category !== "Select Category") {
