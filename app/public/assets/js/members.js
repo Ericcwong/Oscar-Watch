@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 $(document).ready(function() {
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
+  // function handleLoginErr(err) {
+  //   $("#alert .msg").text(err.responseJSON);
+  //   $("#alert").fadeIn(500);
+  // }
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -66,32 +66,33 @@ $(document).ready(function() {
       if (query !== "") {
         query = query + "&";
       }
-      query = query + "isWinner=" + isWinner;
+      query = query + "isWinner=" + "1";
     }
 
     console.log(query);
-    $.get(`/api/movies/search?${query}`, function(films) {
-      $("#search_results").empty();
-      // console.log(enteredMovie);
-      console.log(films);
-      //This is suppose to display the movie poster but is not aligning how it is supposed to be
-      for (m = 0; m < films.length; m++) {
-        let id = films[m].id;
-        let enteredMovie = films[m].movieName;
-        let filmYear = films[m].filmYear;
-        let catagories = films[m].catagories;
-        let name = films[m].name;
-        let isWinner = films[m].isWinner;
-        console.log(enteredMovie);
-        let image;
-        $.ajax({
-          url: `http://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
-          method: "GET"
-        }).then(function(res) {
-          console.log(res.Poster);
-          image = res.Poster;
-          //Create the cards
-          let card = `
+    if (query !== "" && query !== "1") {
+      $.get(`/api/movies/search?${query}`, function(films) {
+        $("#search_results").empty();
+        // console.log(enteredMovie);
+        console.log(films);
+        //This is suppose to display the movie poster but is not aligning how it is supposed to be
+        for (m = 0; m < films.length; m++) {
+          let id = films[m].id;
+          let enteredMovie = films[m].movieName;
+          let filmYear = films[m].filmYear;
+          let catagories = films[m].catagories;
+          let name = films[m].name;
+          let isWinner = films[m].isWinner;
+          console.log(enteredMovie);
+          let image;
+          $.ajax({
+            url: `https://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
+            method: "GET"
+          }).then(function(res) {
+            console.log(res.Poster);
+            image = res.Poster;
+            //Create the cards
+            let card = `
             <div class="col s12 m6 l3">
               <div class="card grey">
                 <div class="card-image">
@@ -107,15 +108,15 @@ $(document).ready(function() {
                 </div>
               </div>
             </div>`;
-          //appends the cards to the row search_results
-          $("#search_results").append(card);
-        });
-      }
-    });
+            //appends the cards to the row search_results
+            $("#search_results").append(card);
+          });
+        }
+      });
+    }
   }
-
-  function showLists() {
-    return;
+  function showLists(listName) {
+    console.log(listName);
   }
   function createList(listName) {
     $.post("/api/watchlist", { name: listName }).then(showLists);

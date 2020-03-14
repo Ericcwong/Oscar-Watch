@@ -45,3 +45,6 @@ form.login {
   #search_results{
     background-color: white;
   }
+  .cardlarge{
+    height: 700px;
+  }
