@@ -20,10 +20,7 @@ module.exports = function(sequelize, Sequelize) {
   });
 
   User.associate = models => {
-    console.log(models.Watchlist);
-    User.belongsToMany(models.Movie, {
-      through: models.Watchlist
-    });
+    User.hasMany(models.Watchlist, {});
   };
 
   return User;
