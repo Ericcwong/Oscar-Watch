@@ -86,7 +86,7 @@ $(document).ready(function() {
         console.log(enteredMovie);
         let image;
         $.ajax({
-          url: `http://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
+          url: `https://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
           method: "GET"
         }).then(function (res) {
           console.log(res.Poster);
