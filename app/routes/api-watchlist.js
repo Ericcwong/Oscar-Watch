@@ -15,15 +15,13 @@ module.exports = function(app) {
       res.json(result);
     });
   });
-  // POST route for saving a new Watchlist
-  app
-    .post("/api/watchlist", function(req) {
-      console.log(req.body);
-      //db.Watchlist Code
-    })
-    .then(function(result) {
-      res.json(result);
-    });
+  // // POST route for saving a new Watchlist
+  // app.post("/api/watchlist", function(req) {
+  //   console.log(req.body);
+  //   //db.Watchlist Code
+  // }).then(function(result) {
+  //   res.json(result);
+  // });
 
   // DELETE route for deleting Watchlists
   app.delete("/api/watchlist/:id", function(req, res) {
