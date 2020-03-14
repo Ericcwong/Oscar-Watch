@@ -33,16 +33,24 @@
 			<div class="col s12">
 				<h2>Welcome <span class="member-name"></span></h2>
 				<hr>
-				<button id="createWatchlist" class="btn waves-effect waves-light amber darken-2" type="submit" name="action">
-					Create List
-					<i class="material-icons right">add_to_queue</i>
-				</button>
+				<form class="col s11" id="add-list">
+					<div class="input-field col s6 amber-text">
+						<input placeholder="List Name" id="list_name" type="text" class="" />
+						<label for="list_name">List Name</label>
+					</div>
+					<button id="createWatchlist" class="btn waves-effect waves-light amber darken-2" type="submit" name="action">
+						Create List
+						<i class=" material-icons right">add_to_queue</i>
+					</button>
+				</form>
 			</div>
 		</div>
 
 	</div>
 	<div class="container">
-		<div class="row" id="watchlist"></div>
+		<div class="row" id="watchlist">
+
+		</div>
 	</div>
 
 	<div class="container section grey darken-3">
