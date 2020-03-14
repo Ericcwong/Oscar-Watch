@@ -9,21 +9,28 @@ var db = require("../models");
 
 module.exports = function(app) {
   app.get("/api/watchlist/userData", function(req, res) {
-    db.User.findAll({
-      where: parameters
-    }).then(function(result) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      // Otherwise send back the user's email and id
+      // Sending back a password, even a hashed password, isn't a good idea
+      res.json({
+        email: req.user.email,
+        id: req.user.id
+      });
+    }
+  });
+
+  //POST route for saving a new Watchlist
+  app.post("/api/watchlist", function(req, res) {
+    console.log(req.body);
+    db.User.addWatchlist(db.Watchlist, { name: req.body.name }).then(function(
+      result
+    ) {
       res.json(result);
     });
   });
-  // POST route for saving a new Watchlist
-  app
-    .post("/api/watchlist", function(req) {
-      console.log(req.body);
-      //db.Watchlist Code
-    })
-    .then(function(result) {
-      res.json(result);
-    });
 
   // DELETE route for deleting Watchlists
   app.delete("/api/watchlist/:id", function(req, res) {
