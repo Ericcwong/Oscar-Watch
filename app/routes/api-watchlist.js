@@ -39,6 +39,7 @@ module.exports = function(app) {
   //Route to get the contents of a particular watchlist name(use to populate watchlist cards)
   app.get("/api/watchlist/:name", function(req, res) {
     db.Watchlist.findAll({
+      attributes: "movies",
       where: { name: req.params.name, UserId: req.user.id }
     }).then(function(result) {
       res.json(result);
@@ -75,12 +76,11 @@ module.exports = function(app) {
   });
 
   // PUT route for adding movies to Watchlist
-  app.put("/api/watchlist", function(req, res) {
-    db.Watchlist.update(req.body, {
-      where: {
-        id: req.body.id
-      }
-    }).then(function(result) {
+  app.put("/api/watchlist/:name", function(req, res) {
+    db.Watchlist.update(
+      { movies: req.body.movies, name: req.body.name },
+      { returning: true, where: { name: req.params.name, UserId: req.user.id } }
+    ).then(function(result) {
       res.json(result);
     });
   });
