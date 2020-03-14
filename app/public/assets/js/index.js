@@ -59,6 +59,9 @@ $(document).ready(function () {
     if (isWinner !== false) {
       if (query !== "") {
         query = query + "&";
+      }else{
+        alert("Please enter a search term");
+        return;
       }
       query = query + "isWinner=" + "1";
     }
