@@ -1,5 +1,5 @@
 /* eslint-disable no-undef */
-$(document).ready(function () {
+$(document).ready(function() {
   // function handleLoginErr(err) {
   //   $("#alert .msg").text(err.responseJSON);
   //   $("#alert").fadeIn(500);
@@ -11,7 +11,7 @@ $(document).ready(function () {
     $(".member-name").text(data.email);
   });
 
-  $.get("/api/watchlist/").then(function (data) {
+  $.get("/api/watchlist/").then(function(data) {
     $(".watchlist-area").text(data);
   });
 
@@ -71,13 +71,12 @@ $(document).ready(function () {
 
     console.log(query);
     if (query !== "" && query !== "1") {
-      $.get(`/api/movies/search?${query}`, function (films) {
+      $.get(`/api/movies/search?${query}`, function(films) {
         $("#search_results").empty();
         // console.log(enteredMovie);
         console.log(films);
         //This is suppose to display the movie poster but is not aligning how it is supposed to be
         for (m = 0; m < films.length; m++) {
-
           let id = films[m].id;
           let enteredMovie = films[m].movieName;
           let filmYear = films[m].filmYear;
@@ -89,7 +88,7 @@ $(document).ready(function () {
           $.ajax({
             url: `https://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
             method: "GET"
-          }).then(function (res) {
+          }).then(function(res) {
             console.log(res.Poster);
             image = res.Poster;
             //Create the cards
@@ -131,7 +130,9 @@ $(document).ready(function () {
 
   $("#createWatchlist").on("click", function(event) {
     event.preventDefault();
-    let listName = $("#list_name").val().trim();
+    let listName = $("#list_name")
+      .val()
+      .trim();
     createList(listName);
   });
   //card layout for watchlists
