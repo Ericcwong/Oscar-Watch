@@ -70,7 +70,7 @@ $(document).ready(function () {
     }
 
     console.log(query);
-    if (query !== "") {
+    if (query !== "" && query !== "1") {
       $.get(`/api/movies/search?${query}`, function (films) {
         $("#search_results").empty();
         // console.log(enteredMovie);
