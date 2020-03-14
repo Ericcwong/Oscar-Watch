@@ -60,7 +60,7 @@ $(document).ready(function () {
       if (query !== "") {
         query = query + "&";
       }
-      query = query + "isWinner=" + isWinner;
+      query = query + "isWinner=" + "1";
     }
 
     console.log(query);
