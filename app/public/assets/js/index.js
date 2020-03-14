@@ -60,7 +60,7 @@ $(document).ready(function () {
       if (query !== "") {
         query = query + "&";
       }
-      query = query + "isWinner=" + isWinner;
+      query = query + "isWinner=" + "1";
     }
 
     console.log(query);
@@ -79,7 +79,7 @@ $(document).ready(function () {
         console.log(enteredMovie);
         let image;
         $.ajax({
-          url: `http://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
+          url: `https://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
           method: "GET"
         }).then(function (res) {
           console.log(res.Poster);
