@@ -8,22 +8,45 @@ var db = require("../models");
 // =============================================================
 
 module.exports = function(app) {
+  //GET Route to get User Email and ID for Display
   app.get("/api/watchlist/userData", function(req, res) {
     if (!req.user) {
       // The user is not logged in, send back an empty object
       res.json({});
     } else {
-      // Otherwise send back the user's email and id
-      // Sending back a password, even a hashed password, isn't a good idea
       res.json({
         email: req.user.email,
         id: req.user.id
       });
     }
   });
-<<<<<<< HEAD
 
-  //POST route for saving a new Watchlist
+  //Route to get all Watchlists that a user has created(populate page with this call)
+  app.get("/api/watchlist/", function(req, res) {
+    if (!req.user) {
+      // The user is not logged in, send back an empty object
+      res.json({});
+    } else {
+      db.Watchlist.findAll({
+        where: { UserId: req.user.id }
+      }).then(function(result) {
+        res.json(result);
+        console.log(result);
+      });
+    }
+  });
+
+  //Route to get the contents of a particular watchlist name(use to populate watchlist cards)
+  app.get("/api/watchlist/:name", function(req, res) {
+    db.Watchlist.findAll({
+      where: { name: req.params.name, UserId: req.user.id }
+    }).then(function(result) {
+      res.json(result);
+      console.log(result);
+    });
+  });
+
+  //POST route for saving a new Watchlist (use to create a new blank watchlist)
   app.post("/api/watchlist", function(req, res) {
     console.log(req.body);
     db.User.addWatchlist(db.Watchlist, { name: req.body.name }).then(function(
@@ -33,21 +56,21 @@ module.exports = function(app) {
     });
   });
 
-
   // DELETE route for deleting Watchlists
-  app.delete("/api/watchlist/:id", function(req, res) {
+  app.delete("/api/watchlist/:name", function(req, res) {
     db.Watchlist.destroy({
       where: {
-        id: req.params.id
+        name: req.params.name,
+        UserId: req.user.id
       }
     }).then(function(result) {
       res.json(result);
     });
   });
 
-  // PUT route for updating posts
+  // PUT route for updating Watchlist
   app.put("/api/watchlist", function(req, res) {
-    db.Movies.update(req.body, {
+    db.Watchlist.update(req.body, {
       where: {
         id: req.body.id
       }

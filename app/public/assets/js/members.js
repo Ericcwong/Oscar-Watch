@@ -10,6 +10,10 @@ $(document).ready(function() {
     $(".member-name").text(data.email);
   });
 
+  $.get("/api/watchlist/").then(function(data) {
+    $(".watchlist-area").text(data);
+  });
+
   function watchlistCreate() {
     let name =
       $("#watchlist_name")
