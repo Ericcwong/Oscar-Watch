@@ -1,9 +1,9 @@
 /* eslint-disable no-undef */
 $(document).ready(function() {
-  function handleLoginErr(err) {
-    $("#alert .msg").text(err.responseJSON);
-    $("#alert").fadeIn(500);
-  }
+  // function handleLoginErr(err) {
+  //   $("#alert .msg").text(err.responseJSON);
+  //   $("#alert").fadeIn(500);
+  // }
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
@@ -132,7 +132,7 @@ $(document).ready(function() {
   $("#createWatchlist").on("click", function (event) {
     event.preventDefault();
     let listName = $("#list_name").val().trim();
-    createList(listName)
+    createList(listName);
   });
   //card layout for watchlists
   //   <div class="col s12 m6 l3">
