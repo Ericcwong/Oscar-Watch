@@ -105,12 +105,26 @@ $(document).ready(function () {
       }
     });
   }
+
+  function showLists() {
+    return;
+  }
+  function createList(listName) {
+    $.post("/api/watchlist", listName)
+      .then(showLists);
+  }
   $("#submitButton").on("click", function (event) {
     event.preventDefault();
     movieSearch();
     // categorySearch();
   });
 
+
+  $("#createWatchlist").on("click", function (event) {
+    event.preventDefault();
+    let listName = $("#list_name").val().trim();
+    createList(listName)
+  });
   //card layout for watchlists
   //   <div class="col s12 m6 l3">
   //   <div class="card grey darken-1">
