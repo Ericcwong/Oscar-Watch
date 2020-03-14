@@ -7,7 +7,7 @@ var session = require("express-session");
 var PORT = process.env.PORT || 8080;
 var db = require("./app/models");
 var passport = require("passport");
-require("./app/config/passport");
+require("./app/config/passport.js");
 
 // Creating express app and configuring middleware needed for authentication
 var app = express();
