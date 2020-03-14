@@ -7,7 +7,7 @@ $(document).ready(function () {
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
-  $.get("/api/watchlist/userData").then(function (data) {
+  $.get("/api/watchlist/userData").then(function(data) {
     $(".member-name").text(data.email);
   });
 
@@ -120,17 +120,16 @@ $(document).ready(function () {
     console.log(listName);
   }
   function createList(listName) {
-    $.post("/api/watchlist", listName)
-      .then(showLists(listName));
+    $.post("/api/watchlist", { name: listName }).then(showLists);
   }
-  $("#submitButton").on("click", function (event) {
+
+  $("#submitButton").on("click", function(event) {
     event.preventDefault();
     movieSearch();
     // categorySearch();
   });
 
-
-  $("#createWatchlist").on("click", function (event) {
+  $("#createWatchlist").on("click", function(event) {
     event.preventDefault();
     let listName = $("#list_name").val().trim();
     createList(listName);

@@ -49,11 +49,17 @@ module.exports = function(app) {
   //POST route for saving a new Watchlist (use to create a new blank watchlist)
   app.post("/api/watchlist", function(req, res) {
     console.log(req.body);
-    db.User.addWatchlist(db.Watchlist, { name: req.body.name }).then(function(
-      result
-    ) {
-      res.json(result);
-    });
+    db.Watchlist.create({
+      name: req.body.name,
+      UserId: req.user.id,
+      movies: {}
+    })
+      .then(function(result) {
+        res.json(result);
+      })
+      .catch(function(err) {
+        console.log(err, req.body.name);
+      });
   });
 
   // DELETE route for deleting Watchlists
@@ -68,7 +74,7 @@ module.exports = function(app) {
     });
   });
 
-  // PUT route for updating Watchlist
+  // PUT route for adding movies to Watchlist
   app.put("/api/watchlist", function(req, res) {
     db.Watchlist.update(req.body, {
       where: {
