@@ -10,16 +10,6 @@ $(document).ready(function () {
 
   console.log(category + nomineeName + movie + filmYear + winner);
 
-  // function categorySearch() {
-  //   let selectedCategory = $("#oscar_category :selected").text();
-  //   $.get(`/api/movies/category/${selectedCategory}`);
-  //   console.log(selectedCategory);
-  // console.log({data});
-  // console.log("You searched for a Catagory");
-
-  // });
-  //}
-
   //Search function for the name of the movie
   function movieSearch() {
     //Takes in user input from DOM
@@ -34,16 +24,7 @@ $(document).ready(function () {
       .val()
       .trim();
     let isWinner = $("input[type=checkbox]").prop("checked");
-    // let isWinner = $("#is_winner").is(":checked");
-    // if($("#is_winner").is(":checked")){
-    //   isWinner = true;
-    //   return isWinner;
-    // }
-    // if($("#is_winner").is(":not(:checked)")){
-    //   isWinner = false;
-    //   return isWinner;
-    // }
-    console.log(typeof isWinner);
+    console.log(isWinner);
     let query = "";
     //What user has selected as a search criteria
     //Searching by categories
@@ -75,19 +56,12 @@ $(document).ready(function () {
       query = query + "filmYear=" + filmYear;
     }
     //Checking if the movie was a Oscar winner
-    if (isWinner !== 0) {
+    if (isWinner !== false) {
       if (query !== "") {
         query = query + "&";
       }
       query = query + "isWinner=" + isWinner;
     }
-    // if(isWinner !== false){
-    //   query = query + "&";
-    //   query = query + "isWinner=" + isWinner;
-    // }else if (isWinner !== true){
-    //   query = query + "&";
-    //   query = query + "isWinner=" + isWinner;
-    // }
 
     console.log(query);
     $.get(`/api/movies/search?${query}`, function (films) {
@@ -96,6 +70,7 @@ $(document).ready(function () {
       console.log(films);
       //This is suppose to display the movie poster but is not aligning how it is supposed to be
       for (m = 0; m < films.length; m++) {
+        let id = films[m].id;
         let enteredMovie = films[m].movieName;
         let filmYear = films[m].filmYear;
         let catagories = films[m].catagories;
@@ -116,7 +91,7 @@ $(document).ready(function () {
               <div class="card-image">
                 <img src="${image}">
                 <span class="card-title">${enteredMovie}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3 add-to-watchlist" data-id="${id}><i class="material-icons">add</i></a>
               </div>
               <div class="card-content">
                 <p>Nominated category: ${catagories}</p>
@@ -132,38 +107,6 @@ $(document).ready(function () {
       }
     });
   }
-  // function nameSearch(){
-  //   let enteredName = $("#nominee_name").val().trim();
-  //   $.get(`/api/movies/name/${enteredName}`,function(data){
-  //     console.log(data);
-  //     console.log("You searched for a Name");
-  //   });
-  // }
-  // function yearSearch(){
-
-  //   let enteredYear = $("#film_production_year").val().trim();
-  //   $.get(`/api/movies/year/${enteredYear}`,function(data){
-  //     console.log(data);
-  //     console.log("You searched for a Year");
-  //   });
-
-  // }
-  // function displaySearch(){
-
-  // }
-  // function searchOscars(event){
-  //   event.preventDefault();
-
-  //   nameSearch();
-
-  //   yearSearch();
-
-  //   movieSearch();
-
-  //   categorySearch();
-
-  // }
-
   $("#submitButton").on("click", function (event) {
     event.preventDefault();
     movieSearch();
