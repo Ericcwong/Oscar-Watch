@@ -7,7 +7,7 @@ $(document).ready(function() {
 
   // This file just does a GET request to figure out which user is logged in
   // and updates the HTML on the page
-  $.get("/api/watchlist/userData").then(function (data) {
+  $.get("/api/watchlist/userData").then(function(data) {
     $(".member-name").text(data.email);
   });
 
@@ -70,13 +70,12 @@ $(document).ready(function() {
     }
 
     console.log(query);
-    $.get(`/api/movies/search?${query}`, function (films) {
+    $.get(`/api/movies/search?${query}`, function(films) {
       $("#search_results").empty();
       // console.log(enteredMovie);
       console.log(films);
       //This is suppose to display the movie poster but is not aligning how it is supposed to be
       for (m = 0; m < films.length; m++) {
-
         let id = films[m].id;
         let enteredMovie = films[m].movieName;
         let filmYear = films[m].filmYear;
@@ -88,7 +87,7 @@ $(document).ready(function() {
         $.ajax({
           url: `http://www.omdbapi.com/?t=${enteredMovie}&apikey=bdaebc3a`,
           method: "GET"
-        }).then(function (res) {
+        }).then(function(res) {
           console.log(res.Poster);
           image = res.Poster;
           //Create the cards
@@ -119,20 +118,21 @@ $(document).ready(function() {
     return;
   }
   function createList(listName) {
-    $.post("/api/watchlist", listName)
-      .then(showLists);
+    $.post("/api/watchlist", { name: listName }).then(showLists);
   }
-  $("#submitButton").on("click", function (event) {
+
+  $("#submitButton").on("click", function(event) {
     event.preventDefault();
     movieSearch();
     // categorySearch();
   });
 
-
-  $("#createWatchlist").on("click", function (event) {
+  $("#createWatchlist").on("click", function(event) {
     event.preventDefault();
-    let listName = $("#list_name").val().trim();
-    createList(listName)
+    let listName = $("#list_name")
+      .val()
+      .trim();
+    createList(listName);
   });
   //card layout for watchlists
   //   <div class="col s12 m6 l3">
