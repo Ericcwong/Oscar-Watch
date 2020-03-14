@@ -88,7 +88,7 @@ $(document).ready(function () {
             //Create the cards
             let card = `
           <div class="col s12 m6 l3">
-            <div class="card grey">
+            <div class="card cardlarge grey">
               <div class="card-image">
                 <img src="${image}">
                 <span class="card-title">${enteredMovie}</span>
