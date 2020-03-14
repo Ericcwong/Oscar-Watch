@@ -78,6 +78,7 @@ module.exports = function(app) {
       parameters.movieName = req.query.movieName;
     }
     if (req.query.isWinner){
+      console.log(req.query.isWinner);
       parameters.isWinner = req.query.isWinner;
     }
     db.Movie.findAll({

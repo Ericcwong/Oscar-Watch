@@ -43,9 +43,8 @@ $(document).ready(function () {
     //   isWinner = false;
     //   return isWinner;
     // }
-    console.log(isWinner);
+    console.log(typeof isWinner);
     let query = "";
-
     //What user has selected as a search criteria
     //Searching by categories
     if (category !== "" && category !== "Select Category") {
@@ -76,8 +75,8 @@ $(document).ready(function () {
       query = query + "filmYear=" + filmYear;
     }
     //Checking if the movie was a Oscar winner
-    if (isWinner !== false) {
-      if (isWinner !== true) {
+    if (isWinner !== 0) {
+      if (query !== "") {
         query = query + "&";
       }
       query = query + "isWinner=" + isWinner;
@@ -101,7 +100,7 @@ $(document).ready(function () {
         let filmYear = films[m].filmYear;
         let catagories = films[m].catagories;
         let name = films[m].name;
-        let isWinner =films[m].isWinner;
+        let isWinner = films[m].isWinner;
         console.log(enteredMovie);
         let image;
         $.ajax({
@@ -117,7 +116,7 @@ $(document).ready(function () {
               <div class="card-image">
                 <img src="${image}">
                 <span class="card-title">${enteredMovie}</span>
-                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3 add-to-watchlist"><i class="material-icons">add</i></a>
+                <a class="btn-floating halfway-fab waves-effect waves-light amber darken-3"><i class="material-icons">add</i></a>
               </div>
               <div class="card-content">
                 <p>Nominated category: ${catagories}</p>

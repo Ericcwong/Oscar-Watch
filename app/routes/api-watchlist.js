@@ -21,6 +21,7 @@ module.exports = function(app) {
       });
     }
   });
+<<<<<<< HEAD
 
   //POST route for saving a new Watchlist
   app.post("/api/watchlist", function(req, res) {
@@ -31,6 +32,7 @@ module.exports = function(app) {
       res.json(result);
     });
   });
+
 
   // DELETE route for deleting Watchlists
   app.delete("/api/watchlist/:id", function(req, res) {
