@@ -4,6 +4,7 @@ $(document).ready(function () {
   let movie = $("#film_nominated").val().trim();
   let filmYear = $("#film_production_year").val().trim();
   let winner = $("#is_winner").is(":checked");
+  const apiKey = "6b740240";
   console.log(winner);
   // let searchResults = $("#search_results");
   // let searchForm = $("#search-movies");
@@ -83,7 +84,7 @@ $(document).ready(function () {
           console.log(enteredMovie);
           let image;
           $.ajax({
-            url: `https://www.omdbapi.com/?t=${enteredMovie}&apikey=6b740240`,
+            url: `https://www.omdbapi.com/?t=${enteredMovie}&apikey=${apiKey}`,
             method: "GET"
           }).then(function (res) {
             console.log(res.Poster);
