@@ -137,24 +137,30 @@ $(document).ready(function() {
       .val()
       .trim();
     createList(listName);
+    $("#add-list").append(watchlists);
   });
-  //card layout for watchlists
-  //   <div class="col s12 m6 l3">
-  //   <div class="card grey darken-1">
-  //     <div class="card-content white-text">
-  //       <span class="card-title">List Name</span>
-  //       <ul>
-  //         <li>Film 1</li>
-  //         <li>Film 2</li>
-  //         <li>Film 3</li>
-  //       </ul>
-  //     </div>
-  //     <div class="card-action">
-  //       <button class="btn waves-effect waves-light amber darken-2 delete-list" data-id="listID">
-  //         Remove List
-  //         <i class="material-icons right">remove</i>
-  //       </button>
-  //     </div>
-  //   </div>
-  // </div>
+  var watchlists =`
+    <div class="col s12 m6 l3">
+    <div class="card grey darken-1">
+      <div class="card-content white-text">
+        <span class="card-title">${listName}</span>
+        <ul>
+          <li>Film 1</li>
+          <li>Film 2</li>
+          <li>Film 3</li>
+        </ul>
+      </div>
+      <div class="card-action">
+        <button class="btn waves-effect waves-light amber darken-2 delete-list" data-id="listID">
+          Remove List
+          <i class="material-icons right">remove</i>
+        </button>
+      </div>
+    </div>
+  </div>`;
+  $("#add-list").append(watchlists);
+});
+$("add-to-watchlist").on("click", function(event){
+  event.preventDefault();
+  $.post("/api/watchlist",{name:listName});
 });

@@ -61,6 +61,17 @@ module.exports = function(app) {
         console.log(err, req.body.name);
       });
   });
+  //put route for adding movies to a watchlist
+  app.put("/api/watchlist/:movies", function(req, res){
+    db.Watchlist.insert({
+      movies:{}
+    }).then(function(result){
+      res.json(result);
+    })
+      .catch(function(err) {
+        console.log(err, req.body.name);
+      });
+  });
 
   // DELETE route for deleting Watchlists
   app.delete("/api/watchlist/:name", function(req, res) {
